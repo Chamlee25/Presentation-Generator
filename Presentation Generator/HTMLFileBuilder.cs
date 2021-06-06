@@ -17,12 +17,12 @@ namespace Presentation_Generator {
         readonly string[] HTML_End_Tags =  { "</p", "</h1", "</h2",">"};
         readonly string[] HTML_Break_Tags = { "<a" };
 
-        public HTMLFileBuilder(string SOURCE_FILE, string TEXT_FILE) {
+        public HTMLFileBuilder(string SOURCE_FILE, string HTML_FILE) {
             StreamReader reader = new StreamReader(SOURCE_FILE);
             string line;
-            FileStream fileCreator = File.Create(TEXT_FILE);
-            fileCreator.Close();
-            StreamWriter Writer = new StreamWriter(TEXT_FILE, true);
+           // FileStream fileCreator = File.Create(HTML_FILE);
+           // fileCreator.Close();
+            StreamWriter Writer = new StreamWriter(HTML_FILE, true);
 
 
 
@@ -63,8 +63,11 @@ namespace Presentation_Generator {
 
 
                 if (ActiveTag == HTML_TAGS.IN) {
-                    Console.WriteLine(line);
-                    Writer.WriteLineAsync(line);
+
+                    write(line, Writer);
+                    System.Threading.Thread.Sleep(1);
+                       
+                   
                 }
 
                 foreach(string endTag in HTML_End_Tags) {
@@ -77,6 +80,10 @@ namespace Presentation_Generator {
             reader.Close();
             Writer.Close();
             
+        }
+
+        static async void write(string text, StreamWriter sw) {
+            await sw.WriteLineAsync(text);
         }
 
     }
