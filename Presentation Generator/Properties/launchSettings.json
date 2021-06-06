@@ -1,11 +1,6 @@
 {
   "profiles": {
-    "WikiPoint": {
-      "commandName": "Project",
-      "commandLineArgs": "https://cs.wikipedia.org/wiki/Rybolov_na_dlouhou_lovnou_%C5%A1%C5%88%C5%AFru",
-      "workingDirectory": "D:\\programming\\Visual_Studio\\Presentation Generator\\Presentation Generator"
-    },
-    "newProfile1": {
+    "Beta": {
       "commandName": "Project",
       "commandLineArgs": "https://cs.wikipedia.org/wiki/Rybolov_na_dlouhou_lovnou_%C5%A1%C5%88%C5%AFru",
       "workingDirectory": "D:\\programming\\Visual_Studio\\Presentation Generator\\Presentation Generator"

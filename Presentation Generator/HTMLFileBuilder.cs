@@ -64,7 +64,7 @@ namespace Presentation_Generator {
 
                 if (ActiveTag == HTML_TAGS.IN) {
                     Console.WriteLine(line);
-                    Writer.WriteLineAsync(line+"/n");
+                    Writer.WriteLineAsync(line);
                 }
 
                 foreach(string endTag in HTML_End_Tags) {
