@@ -16,9 +16,7 @@ namespace Presentation_Generator {
             new HTMLFileBuilder(SOURCE_FILE, HTML_RESULT_FILE);
             File.Delete(SOURCE_FILE);
             new TextBuilder(HTML_RESULT_FILE, TEXT_FILE);
-            while (true) {
-
-            }           
+             
             return 0;
         }
     }
