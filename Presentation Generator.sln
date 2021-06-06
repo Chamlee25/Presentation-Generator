@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation Generator", "Presentation Generator\Presentation Generator.csproj", "{834FBF7F-B1F6-436B-ADB7-292A519B147C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{71E68F6C-83EE-4CDA-BA00-298374B8D7BB}"
+	ProjectSection(SolutionItems) = preProject
+		HTML_Downloader.cs = HTML_Downloader.cs
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{834FBF7F-B1F6-436B-ADB7-292A519B147C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{834FBF7F-B1F6-436B-ADB7-292A519B147C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{834FBF7F-B1F6-436B-ADB7-292A519B147C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{834FBF7F-B1F6-436B-ADB7-292A519B147C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B796C010-AC7A-465B-82DC-A1E7AC82390F}
+	EndGlobalSection
+EndGlobal
