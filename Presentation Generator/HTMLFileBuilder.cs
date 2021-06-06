@@ -64,27 +64,30 @@ namespace Presentation_Generator {
 
                 if (ActiveTag == HTML_TAGS.IN) {
 
-                    write(line, Writer);
+                    write(Writer, line);
                     System.Threading.Thread.Sleep(1);
-                       
-                   
                 }
-
-                foreach(string endTag in HTML_End_Tags) {
+                foreach (string endTag in HTML_End_Tags) {
                     if (line.Contains(endTag)) {
                         ActiveTag = HTML_TAGS.OUT;
                     }
                 }
+
+
             }
 
-            reader.Close();
-            Writer.Close();
+               
+            
+
+                 reader.Close();
+                 Writer.Close();
             
         }
 
-        static async void write(string text, StreamWriter sw) {
-            await sw.WriteLineAsync(text);
+        async void write(StreamWriter sw, string line) {
+            await sw.WriteLineAsync(line);
         }
+
 
     }
 }

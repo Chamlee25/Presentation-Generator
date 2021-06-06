@@ -11,24 +11,26 @@ namespace Presentation_Generator {
 
         public TextBuilder(string HTML_RESULT_FILE, string TEXT_FILE) {
 
-            FileStream fileCreator = File.Create(TEXT_FILE);
-            fileCreator.Close();
+           
 
             StreamReader reader = new StreamReader(HTML_RESULT_FILE);
             string line;
 
             StreamWriter writer = new StreamWriter(TEXT_FILE, true);
-
+            
             
             while ((line = reader.ReadLine()) != null) {
                 
                foreach(string starterTag in starterTags) {
                     if (line.Contains(starterTag)) {
-                        Console.WriteLine(line);
+                        
                         foreach (string endTag in endTags) {
                             if (line.Contains(endTag)) {
                                 string temp = line.Substring(line.IndexOf(starterTag), line.IndexOf(endTag));
-                                Console.WriteLine(temp);
+                                Console.WriteLine(line);
+                                writer.WriteLineAsync(temp);
+                                write(writer, temp);
+                                //System.Threading.Thread.Sleep(1);
 
 
 
@@ -37,6 +39,10 @@ namespace Presentation_Generator {
                     }
                 }
             }
+        }
+
+        async void write(StreamWriter sw, string line) {
+            await sw.WriteLineAsync(line);
         }
     }
 }

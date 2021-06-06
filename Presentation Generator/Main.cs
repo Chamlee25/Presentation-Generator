@@ -12,12 +12,18 @@ namespace Presentation_Generator {
         public static string TEXT_FILE = "TEXT.txt";
 
         static int Main(string[] args) {
+            try { clean(); } catch(Exception e) { }
             new HTML_DOWNLOADER(args[0], SOURCE_FILE);
             new HTMLFileBuilder(SOURCE_FILE, HTML_RESULT_FILE);
             File.Delete(SOURCE_FILE);
             new TextBuilder(HTML_RESULT_FILE, TEXT_FILE);
              
             return 0;
+        }
+        static void clean() {
+            File.Delete(SOURCE_FILE);
+            File.Delete(HTML_RESULT_FILE);
+            File.Delete(TEXT_FILE);
         }
     }
 }
