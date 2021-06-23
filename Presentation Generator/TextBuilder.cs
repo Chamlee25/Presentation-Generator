@@ -27,17 +27,21 @@ namespace Presentation_Generator {
                         foreach (string endTag in endTags) {
                             if (line.Contains(endTag)) {
                                 int start = line.IndexOf(starterTag), end = line.IndexOf(endTag);
+                                Console.WriteLine(line);
                                 Console.WriteLine(start + " " + end);
-                                while (line.IndexOf(endTag) < line.IndexOf(starterTag)) {
+                                if(end<start) {
                                     char[] tempChar = line.ToCharArray();
                                     Console.WriteLine(tempChar.Length);
                                     Console.WriteLine(end);
+                                    tempChar[end] = ' ';
+                                    tempChar[end+3] = ' ';
                                     tempChar[end+1] = ' ';
-                                    line = new string(tempChar);
+                                    tempChar[end+2] = ' ';
+                                    line = new String(tempChar);
                                     end = line.IndexOf(endTag);
                                     Console.WriteLine(start + " " +  end);
                                 }
-
+                  
                                 string temp = line.Substring(line.IndexOf(starterTag), line.IndexOf(endTag));
                                 Console.WriteLine(temp);
                                 
